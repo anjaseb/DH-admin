@@ -4,162 +4,122 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Portal | Administração</title>
+    <meta name="description" content="Domingos Humba — comércio geral e prestação de serviço LDA.">
+    <title>Domingos Humba | Comércio Geral e Prestação de Serviço</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800\&family=Inter:wght@400;500;600;700;800\&family=JetBrains+Mono:wght@500;600;700\&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .admin-tabs {
-            display: flex;
-            gap: 8px;
-            margin: 16px 0 20px;
-        }
-
-        .admin-tabs button {
-            padding: 8px 16px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: var(--white);
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-        }
-
-        .admin-tabs button.active {
-            background: var(--brand);
-            color: var(--white);
-            border-color: var(--brand);
-        }
-
-        .admin-view {
-            display: none;
-        }
-
-        .admin-view.active {
-            display: block;
-        }
-
-        table input, table select {
-            width: 100%;
-            padding: 6px 8px;
-            border: 1px solid var(--line);
-            border-radius: 6px;
-            font-size: 13px;
-        }
-
-        .area-block {
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 18px;
-            margin-bottom: 18px;
-        }
-
-        .area-block h3 {
-            margin: 0 0 4px;
-        }
-
-        .area-block .tag {
-            color: var(--brand);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 10px;
-            margin: 14px 0;
-        }
-
-        .photo-item {
-            position: relative;
-        }
-
-        .photo-item img {
-            width: 100%;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .photo-item button {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            background: rgba(0, 0, 0, .7);
-            color: #fff;
-            border: 0;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
-            font-size: 12px;
-            line-height: 1;
-        }
-
-        .upload-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .upload-row input[type="text"] {
-            flex: 1;
-            min-width: 160px;
-            padding: 8px 10px;
-            border: 1px solid var(--line);
-            border-radius: 6px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <main class="portal">
-        <div class="wrap portal-layout">
-            <aside class="sidebar"><img src="assets/img/logo.png" width="480" height="348" alt="Domingos Humba"><a
-                    href="dashboard.html">Dashboard</a><a href="funcionarios.html">Funcionários / Chat</a><a
-                    href="admin.html">Administração</a><a href="presencas.html">Presenças</a><a
-                    href="index.html">Site público</a><a href="#" id="logout">Terminar sessão</a></aside>
-            <section class="panel">
-                <div class="eyebrow">ADMINISTRAÇÃO</div>
-                <h1>Gestão do site</h1>
-                <p id="msg"></p>
-
-                <div class="admin-tabs">
-                    <button type="button" data-tab="funcionarios" class="active">Funcionários</button>
-                    <button type="button" data-tab="fotos">Fotos dos trabalhos</button>
-                </div>
-
-                <div id="tab-funcionarios" class="admin-view active">
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Departamento</th>
-                                    <th>Perfil</th>
-                                    <th>Estado</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody id="rows"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div id="tab-fotos" class="admin-view">
-                    <p>Escolhe uma área e envia as fotos que devem aparecer na página de projectos do site.</p>
-                    <div id="areas"></div>
-                </div>
-            </section>
+    <header>
+        <div class="wrap nav"><a class="brand" href="index.html"><img src="assets/img/logo.png" width="480" height="348"
+                    alt="Domingos Humba - Comércio Geral e Prestação de Serviço LDA"></a><button class="menu">☰</button>
+            <nav class="navlinks"><a href="index.html">Início</a><a href="sobre.html">Sobre nós</a><a
+                    href="servicos.html">Serviços</a><a href="projectos.html">Projectos</a><a
+                    href="contactos.html">Contactos</a><a href="login.html">Portal</a></nav>
         </div>
-    </main>
-    <script type="module" src="assets/js/admin.js"></script>
+    </header>
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div>
+                <div >DOMINGOS HUMBA  COMÉRCIO & SERVIÇOS</div>
+                <h1><span data-ct="hero.titulo">Um parceiro para</span> <span class="accent"
+                        data-ct="hero.destaque">muitas soluções.</span></h1>
+                <p data-ct="hero.texto">Uma empresa angolana com equipa própria, arquitectura,
+                    tecnologia, instalações, comércio, limpeza, eventos, segurança e muito mais.</p>
+                <div class="actions"><a class="btn" href="contactos.html">Solicitar orçamento</a><a class="btn alt"
+                        href="login.html">Portal</a></div>
+                <div class="chips"><span class="chip">Arquitectura</span><span
+                        class="chip">Software</span><span class="chip">Instalações</span><span
+                        class="chip">Limpeza</span><span class="chip">Eventos</span><span
+                        class="chip">Segurança</span><span class="chip">Comércio geral</span></div>
+            </div>
+            <div <img src="assets/img/logo.png" width="480" height="348"
+                    alt="Logotipo Domingos Humba">
+                <div class="hero-specs">
+                    <div><b>10</b>Áreas de actuação</div>
+                    <div><b>Namibe</b>Sede</div>
+                    <div><b>Angola</b>Actuação</div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <section class="section pale">
+        <div class="wrap">
+            <div class="stats">
+                <div class="stat"><strong>10+</strong><span>Áreas de actividade</span></div>
+                <div class="stat"><strong>360°</strong><span>Comércio geral e serviços</span></div>
+                <div class="stat"><strong>1</strong><span>Parceiro para várias necessidades</span></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="wrap">
+            <div>PORQUÊ A DOMINGOS HUMBA</div>
+            <h2>Um único fornecedor, várias respostas.</h2>
+            <p class="lead">Reduza o número de fornecedores e ganhe um só ponto de contacto para diferentes necessidades
+                da sua empresa, instituição ou casa.</p>
+            <div class="diff">
+                <div class="diffcard">
+                    <h3>Equipa própria</h3>
+                    <p>Equipa própria organizada por área, sem subcontratação constante.</p>
+                </div>
+                <div class="diffcard">
+                    <h3>Vários sectores</h3>
+                    <p>De obras a software: menos coordenação entre fornecedores diferentes.</p>
+                </div>
+                <div class="diffcard">
+                    <h3>Acompanhamento</h3>
+                    <p>Orçamento, execução e suporte tratados com a mesma equipa.</p>
+                </div>
+                <div class="diffcard">
+                    <h3>Portal interno</h3>
+                    <p>Gestão de presenças e comunicação organizada entre a equipa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="wrap">
+            <div>VAMOS TRABALHAR JUNTOS</div>
+            <h2>Tem um projecto? Fale com a Domingos Humba.</h2><a class="btn light" href="contactos.html">Entrar em
+                contacto</a>
+        </div>
+    </section>
+    <footer>
+        <div class="wrap foot">
+            <div><img src="assets/img/logo.png" width="480" height="348" alt="Domingos Humba">
+                <p>Comércio geral e prestação de serviço LDA.</p>
+            </div>
+            <div>
+                <h3>Empresa</h3><a href="sobre.html">Sobre nós</a><a href="servicos.html">Serviços</a><a
+                    href="projectos.html">Projectos</a>
+            </div>
+    <div>
+            <h3>Contactos</h3><a href="tel:+244932221733" data-ct="contactos.telefone" data-ct-tel="contactos.telefone">+244 932 221 733</a>
+
+<a href="tel:+244931052964" data-ct="contactos.telefone" data-ct-tel="contactos.telefone">+244 931 052 964</a>
+
+<a href="tel:+244931580232" data-ct="contactos.telefone" data-ct-tel="contactos.telefone">+244 931 580 232</a>
+
+<a href="mailto:domingosmanuelhumba2021@gmail.com" data-ct="contactos.email" data-ct-mail="contactos.email">domingosmanuelhumba2021@gmail.com</a>
+
+<a href="https://wa.me/244932221733?text=Olá%20Domingos%20Humba,%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" data-ct-wa="contactos.whatsapp_numero"><i class="fab fa-whatsapp"></i></a>
+
+<a href="https://web.facebook.com/61593819513432/" target="_blank" rel="noopener noreferrer" data-ct="contactos.facebook" data-ct-facebook="contactos.facebook"><i class="fab fa-facebook"></i></a>
+
+<span data-ct="contactos.endereco">Bairro 4 e Meio, por trás da Igreja IESA</span>
+    </div>
+        </div>
+        <div class="copy">© 2026 Domingos Humba. Todos os direitos reservados.</div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/content.js"></script>
 </body>
 
 </html>
